@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'course/index'
+
   get 'admin/index'
 
   root 'users#index'
   resources :users
-
+  resources :courses
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

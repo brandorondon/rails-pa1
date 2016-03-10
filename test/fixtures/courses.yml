@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  independent_study: false
+  name: MyString
+  subjects: MyString
+  code: MyString
+  credits: 1.5
+  description: MyText
+  requirements: MyString
+
+two:
+  independent_study: false
+  name: MyString
+  subjects: MyString
+  code: MyString
+  credits: 1.5
+  description: MyText
+  requirements: MyString
