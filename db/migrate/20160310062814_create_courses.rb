@@ -1,6 +1,5 @@
 class CreateCourses < ActiveRecord::Migration
   def change
-    drop_table :courses
     create_table :courses do |t|
       t.boolean :independent_study
       t.string :name
