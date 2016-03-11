@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "static_pages#home"
   get 'home' => 'static_pages#home'
 
   get 'subjects' => 'subjects#index'
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
 
   get 'admin/index'
 
-  root 'users#index'
   get 'instructors' => 'instructor#index'
   get 'logout' => 'sessions#destroy'
   resources :users
