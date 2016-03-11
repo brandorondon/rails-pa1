@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  get 'home' => 'static_pages#home'
+
+  get 'subjects' => 'subjects#index'
+
+  get 'instructor/index'
+
   get 'course/index'
 
   get 'admin/index'
 
   root 'users#index'
+  get 'instructors' => 'instructor#index'
+  get 'logout' => 'sessions#destroy'
   resources :users
   resources :courses
   controller :sessions do

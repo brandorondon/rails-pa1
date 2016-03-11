@@ -1,16 +1,18 @@
+<h1>Subjects</h1>
+
 <table class ="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
+
   <tbody>
-    <% @courses.each do |c| %>
+    <% @subjects.each do |inst| %>
       <tr>
         <div class="container-fluid">
-          <td><%= c.name %></td>
+          <td><%= inst.name %>
         </div>
       </tr>
     <% end %>
