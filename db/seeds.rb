@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Subject.destroy_all
-file = File.read('/Users/brandorondon/Dropbox/cosi166b_brando/CourseCatalog/json/subject.json')
+file = File.read('CourseCatalog/app/json/subject.json')
 data1 = JSON.parse(file)
 
 data1.each do | subject |
@@ -17,7 +17,7 @@ data1.each do | subject |
 end
 
 Course.destroy_all
-f = File.read('/Users/brandorondon/Dropbox/cosi166b_brando/CourseCatalog/json/course.json')
+f = File.read('CourseCatalog/app/json/course.json')
 data2 = JSON.parse(f)
 
 data2.each do | course |
