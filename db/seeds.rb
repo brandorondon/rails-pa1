@@ -6,6 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Instructor.destroy_all
+ins_file = File.read('app/json/instructor.json')
+data = JSON.parse(ins_file)
+
+data.each do | instructor |
+  Instructor.create!(first: instructor['first'],
+                     last: instructor['last'],
+                     middle: instructor['middle'],
+                     email: instructor['email'])
+end
+
+
 Subject.destroy_all
 file = File.read('app/json/subject.json')
 data1 = JSON.parse(file)
