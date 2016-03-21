@@ -10,9 +10,11 @@ class CoursesController < ApplicationController
 
   def enroll
     current_user.enroll(params[:course_id])
+    @course = Course.find_by(id: params[:course_id] )
   end
 
   def show
+    @course = Course.find_by(id: params[:id])
   end
 
   def search

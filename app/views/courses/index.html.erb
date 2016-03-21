@@ -11,7 +11,7 @@
       <% @courses.each do |c| %>
         <tr>
           <div class="container-fluid">
-            <td><%= c.name %></td>
+            <td><%= link_to c.name, c %></td>
 
             <td>
               <%= form_tag(controller: "courses", action: "enroll", method: "put", class: "nifty_form") do %>

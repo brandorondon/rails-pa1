@@ -1,7 +1,35 @@
 
 
-<%= form_tag(courses_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Courses" %>
-  <%= collection_select(:identification,:identification, Subject.all, :identification, :name, :prompt => true) %>
-  <%= submit_tag "Search"%>
-<% end %>
+  <div class="container">
+    <%= form_tag(courses_path, :method => "get", id: "search-form") do %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>Course Search</h2>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+        	<div class="col-md-6">
+            <div class="form-horizontal">
+              <div class="input-group">
+                <div class="ddl-select input-group-btn">
+                  <%= collection_select(:identification,:identification, Subject.all, :identification, :name, :prompt => true)%>
+                </div>
+              </div>
+            </div>
+            <div>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Courses", class: "form-control" %>
+              <span class="input-group-btn">
+                <%= submit_tag "Search", class: "btn btn-md"%>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+        	<div class="row">
+            <div id="sresult" class="well"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <% end %>
+  </div>

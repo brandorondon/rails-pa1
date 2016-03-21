@@ -6,9 +6,7 @@ Rails.application.routes.draw do
 
   get 'instructor/index'
 
-  # get 'course/index' => 'course#show'
-  #
-  # get '/courses/:id' => 'courses#show'
+  get 'course/index'
 
   post 'courses/enroll'
   get 'admin/index'

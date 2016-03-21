@@ -14,10 +14,23 @@
       <p class="centered text-center"> <%= link_to "Instructors", instructors_url %></p>
     </div>
   </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p class="centered text-center"> <%= link_to "Search Courses", search_url %></p>
+    </div>
+  </div>
 </div>
 
+
 <% if current_user != nil %>
+<h1 class="centered text-center">Enrolled Classes</h1>
+  <div class="panel-group">
   <% current_user.courses.each do | course | %>
-    <p> <%= course.name %> </p>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="centered text-center"> <%= course.name %> </p>
+      </div>
+    </div>
   <%end%>
+</div>
 <%end%>
