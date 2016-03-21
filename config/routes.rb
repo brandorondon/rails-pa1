@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'course/index'
 
   get 'admin/index'
-
+  get 'search' => 'courses#search'
   get 'instructors' => 'instructor#index'
   get 'logout' => 'sessions#destroy'
   resources :users

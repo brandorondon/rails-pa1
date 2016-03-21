@@ -7,12 +7,16 @@
   </thead>
 
   <tbody>
-    <% @courses.each do |c| %>
-      <tr>
-        <div class="container-fluid">
-          <td><%= c.name %></td>
-        </div>
-      </tr>
-    <% end %>
-  </tbody>
+    <% if @courses != nil %>
+      <% @courses.each do |c| %>
+        <tr>
+          <div class="container-fluid">
+            <td><%= c.name %></td>
+          </div>
+        </tr>
+        <% end %>
+      </tbody>
+    <% else %>
+      <p> No Results </p>
+    <%end%>
 </table>

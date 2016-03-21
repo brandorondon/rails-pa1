@@ -23,9 +23,11 @@ file = File.read('app/json/subject.json')
 data1 = JSON.parse(file)
 
 data1.each do | subject |
+  len = subject['id'].length
+  id = subject['id'][5,len].to_i
   Subject.create!(name: subject['name'],
                   abbreviation: subject['abbreviation'],
-                  identification: subject['id'].to_i)
+                  identification: id)
 end
 
 Course.destroy_all
@@ -33,8 +35,8 @@ f = File.read('app/json/course.json')
 data2 = JSON.parse(f)
 
 data2.each do | course |
-  len = data2[0]["subjects"][0]['id'].length
-  id = data2[0]["subjects"][0]['id'][5,len].to_i
+  len = course["subjects"][0]['id'].length
+  id = course["subjects"][0]['id'][5,len].to_i
   Course.create!(independent_study: course['independent_study'],
                  name:  course['name'],
                  code:  course['code'],
