@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   post 'courses/enroll'
   get 'admin/index'
-  get 'search' => 'courses#search'
+  get 'search' => 'courses#index'
   get 'instructors' => 'instructor#index'
   get 'logout' => 'sessions#destroy'
   resources :users

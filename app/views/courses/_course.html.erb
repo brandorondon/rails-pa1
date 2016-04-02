@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <tr>
+    <td><%= link_to course.name, course %></td>
+
+    <td>
+      <%= form_tag(controller: "courses", action: "enroll", method: "put", class: "nifty_form") do %>
+        <%= hidden_field_tag :course_id, course.id %>
+        <%= submit_tag "Enroll" %>
+      <%end%>
+    </td>
+  </tr>
+
+</div>

@@ -1,3 +1,8 @@
+<%= render 'search' %>
+
+<div id="results">
+</div>
+
 <table class ="table table-hover">
   <thead>
     <tr>
@@ -6,24 +11,11 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id='courses'>
     <% if @courses != nil %>
-      <% @courses.each do |c| %>
-        <tr>
-          <div class="container-fluid">
-            <td><%= link_to c.name, c %></td>
-
-            <td>
-              <%= form_tag(controller: "courses", action: "enroll", method: "put", class: "nifty_form") do %>
-                <%= hidden_field_tag :course_id, c.id %>
-                <%= submit_tag "Enroll" %>
-              <%end%>
-          </td>
-
-          </div>
-        </tr>
-        <% end %>
-      </tbody>
+      <%= render :partial => @courses %>
+      
+  </tbody>
     <% else %>
       <p> No Results </p>
     <%end%>

@@ -1,11 +1,19 @@
 class CoursesController < ApplicationController
   before_filter :authorize
+  respond_to :js, :html
   def index
     if params[:search]
       @courses = Course.search(params[:search],params[:identification]['identification'])
     else
       @courses = Course.all
     end
+
+
+    respond_to do |format|
+      format.html #do i need this?
+      format.js
+    end
+
   end
 
   def enroll
@@ -15,9 +23,6 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find_by(id: params[:id])
-  end
-
-  def search
   end
 
 end
