@@ -1,22 +1,6 @@
+
+
 <%= render 'search' %>
 
 <div id="results">
 </div>
-
-<table class ="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody id='courses'>
-    <% if @courses != nil %>
-      <%= render :partial => @courses %>
-      
-  </tbody>
-    <% else %>
-      <p> No Results </p>
-    <%end%>
-</table>

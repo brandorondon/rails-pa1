@@ -3,8 +3,10 @@ class CoursesController < ApplicationController
   respond_to :js, :html
   def index
     if params[:search]
+      search = true
       @courses = Course.search(params[:search],params[:identification]['identification'])
     else
+      search = false
       @courses = Course.all
     end
 
